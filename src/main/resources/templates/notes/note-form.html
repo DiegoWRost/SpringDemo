@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Save Note</title>
+</head>
+<body>
+	<div class="container">
+		<h3>Note</h3>
+		<h4>Save Note</h4>
+		<form action="#" th:action="@{/notes/save(personId=${note.owner.personId})}" th:object="${note}" method="POST">
+			<input type="hidden" th:field="*{noteId}" />
+			<input type="text" th:field="*{title}" placeholder="Title">
+			<textarea th:field="*{contents}" placeholder="Contents"></textarea>
+			<button type="submit">Save</button>
+		</form>
+		<a th:href="@{/notes/(personId=${note.owner.personId})}">Back to note list</a>
+	</div>
+</body>
+</html>

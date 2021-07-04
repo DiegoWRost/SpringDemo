@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Save Person</title>
+</head>
+
+<body>
+<div class="container">
+    <h3>Person Directory</h3>
+    <h4>Save Person</h4>
+    <form action="#" th:action="@{/people/save}" th:object="${person}" method="POST">
+        <input type="hidden" th:field="*{personId}">
+        <input type="text" th:field="*{firstName}" placeholder="First name">
+        <input type="text" th:field="*{lastName}" placeholder="Last name">
+        <input type="email" th:field="*{email}" placeholder="Email">
+        <input type="password" th:field="*{password}" placeholder="Password">
+        <button type="submit">Save</button>
+    </form>
+    <a th:href="@{/people}">Back to people list</a>
+</div>
+</body>
+</html>
